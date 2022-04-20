@@ -19,7 +19,7 @@ time the game starts
 
 @Autonomous
 
-public class CameraAuto extends LinearOpMode
+public class CameraAuto_FF extends LinearOpMode
 {
     /* Note: This sample uses the all-objects Tensor Flow model (FreightFrenzy_BCDM.tflite), which contains
      * the following 4 detectable objects

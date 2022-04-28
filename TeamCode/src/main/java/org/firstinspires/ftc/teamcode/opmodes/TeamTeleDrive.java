@@ -3,13 +3,13 @@ package org.firstinspires.ftc.teamcode.opmodes;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
-import org.firstinspires.ftc.teamcode.hardware.Robot;
+import org.firstinspires.ftc.teamcode.hardware.TeamRobot;
 
 /*
 Remote control opmode for driving the team robot
  */
-@TeleOp
-public class TeleDrive extends LinearOpMode
+//@TeleOp
+public class TeamTeleDrive extends LinearOpMode
 {
     @Override
     public void runOpMode() throws InterruptedException
@@ -17,7 +17,7 @@ public class TeleDrive extends LinearOpMode
         double drive = 0.0, turn = 0.0, scale = 0.0, leftPower = 0.0, rightPower = 0.0;
 
         // first, initialize the robot utility class and wait for start button
-        Robot.init(this);
+        TeamRobot.init(this);
         telemetry.addData("Status", "Initialized");
         telemetry.update();
         waitForStart();
@@ -29,7 +29,7 @@ public class TeleDrive extends LinearOpMode
             telemetry.addData("Status", "Running");
             telemetry.addData("Power", "Left=%.2f, Right=%.2f", leftPower, rightPower);
             telemetry.addData("Heading", "%3.1f (%s)",
-                    Robot.GetAbsoluteCompassHeading(), Robot.GetCompassDir());
+                    TeamRobot.GetAbsoluteCompassHeading(), TeamRobot.GetCompassDir());
             telemetry.update();
 
             // get the gamepad inputs that will be used for driving and turning
@@ -47,7 +47,7 @@ public class TeleDrive extends LinearOpMode
             // and finally, drive
             leftPower = scale * (drive + turn);
             rightPower = scale * (drive - turn);
-            Robot.SetDrivePower(leftPower, rightPower);
+            TeamRobot.SetDrivePower(leftPower, rightPower);
         }
     }
 }

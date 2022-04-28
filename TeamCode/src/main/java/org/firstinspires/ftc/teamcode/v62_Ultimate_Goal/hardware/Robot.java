@@ -15,6 +15,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
 import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
+import org.firstinspires.ftc.teamcode.hardware.TeamRobot;
 import org.firstinspires.ftc.teamcode.v62_Ultimate_Goal.utilities.AutoPilot;
 
 public class Robot
@@ -557,7 +558,7 @@ public class Robot
      */
     private static void SetupTurnCommonDeg(double toleranceDeg)
     {
-        startAngleDeg = org.firstinspires.ftc.teamcode.hardware.Robot.GetAbsoluteCompassHeading();
+        startAngleDeg = TeamRobot.GetAbsoluteCompassHeading();
         toleranceAngleDeg = Math.abs(toleranceDeg);
     }
 
